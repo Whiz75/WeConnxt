@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/FullScreenDialogStyle">
+
+    <!--include custom app bar in the post layout-->
+    <!--<include
+        android:id="@+id/post_appbar"
+        layout="@layout/custom_appbar"/>-->
+
+    <RelativeLayout
+        android:id="@+id/buttons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/image_cancel"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:tint="@color/black"
+            android:src="@drawable/ic_close"/>
+
+    </RelativeLayout>
+
+    <!--post layout-->
+    <RelativeLayout
+        android:id="@+id/post_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/buttons_layout">
+
+        <!--to display the user's profile photo-->
+        <ImageView
+            android:id="@+id/post_user_image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_account_circle"
+            android:layout_marginStart="20dp"/>
+
+        <!--to dispaly the current user's username-->
+        <TextView
+            android:id="@+id/postAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:layout_toRightOf="@id/post_user_image"
+            android:layout_marginTop="25dp"/>
+
+        <!--edittext to allow user's text to post-->
+        <EditText
+            android:id="@+id/post_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:inputType="textMultiLine"
+            android:lines="10"
+            android:maxLines="10"
+            android:minLines="2"
+            android:hint="write something here"
+            android:layout_below="@id/post_user_image"
+            android:layout_centerVertical="true"
+            android:padding="5dp"
+            android:background="@drawable/custom_new_post_background"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/post_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:text="post"
+        android:textColor="@color/white"
+        android:background="@drawable/custom_new_post_background"
+        android:layout_below="@id/post_relative_layout"/>
+
+    <!--second layout for the -->
+    <!--<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/post_relative_layout">
+
+        <ImageView
+            android:id="@+id/post_image"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="70dp"
+            android:src="@drawable/ic_image_blue"/>
+
+        <ImageView
+            android:id="@+id/post_location"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toEndOf="@id/post_image"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_location_on_black_24dp"/>
+
+    </RelativeLayout>-->
+
+</RelativeLayout>

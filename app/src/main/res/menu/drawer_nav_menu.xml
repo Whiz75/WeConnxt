@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/nav_profile"
+            android:title="@string/txt_account"
+            android:icon="@drawable/baseline_account_circle_white_24dp" />
+        <item
+            android:id="@+id/nav_about"
+            android:title="@string/txt_about"
+            android:icon="@drawable/baseline_home_black_24dp"
+            />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:title="@string/txt_logout"
+            android:icon="@android:drawable/ic_menu_close_clear_cancel"
+            />
+    </group>
+
+</menu>
+
+    <!-- Code to implement into Activity:
+
+    Android.Widget.SearchView searchView;
+    public override bool OnCreateOptionsMenu(IMenu menu)
+    {
+      this.MenuInflater.Inflate(Resource.Menu.nav_menu, menu);
+
+      var searchItem = menu.FindItem(Resource.Id.action_search);
+
+      searchView = searchItem.ActionProvider.JavaCast<Android.Widget.SearchView>();
+
+      searchView.QueryTextSubmit += (sender, args) =>
+      {
+        Toast.MakeText(this, "You searched: " + args.Query, ToastLength.Short).Show();
+
+      };
+
+
+      return base.OnCreateOptionsMenu(menu);
+    }
+
+    -->

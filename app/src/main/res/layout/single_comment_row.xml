@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/comment_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription"
+        android:src="@drawable/ic_account_circle"/>
+
+    <TextView
+        android:id="@+id/comment_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/username_text"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toEndOf="@+id/comment_image"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.daasuu.bl.BubbleLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:padding="5dp"
+        app:bl_arrowDirection="left"
+        app:bl_arrowHeight="8dp"
+        app:bl_arrowPosition="12dp"
+        android:layout_alignParentEnd="true"
+        app:bl_arrowWidth="8dp"
+        app:bl_bubbleColor="@android:color/holo_blue_light"
+        app:bl_cornersRadius="8dp"
+        app:layout_constraintStart_toEndOf="@+id/comment_image"
+        app:layout_constraintTop_toBottomOf="@+id/comment_username">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="UselessLeaf">
+
+            <TextView
+                android:id="@+id/comment_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/loading_comment_text"
+                />
+
+            <TextView
+                android:id="@+id/comment_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/comment_time_text"
+                android:textSize="10sp"
+                android:textColor="@color/white"
+                android:layout_below="@id/comment_message"
+                android:layout_toEndOf="@id/comment_message"
+                tools:ignore="SmallSp" />
+        </RelativeLayout>
+    </com.daasuu.bl.BubbleLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
